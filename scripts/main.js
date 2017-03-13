@@ -13,7 +13,11 @@
     /*
     bind( ) is used to guarantee that you get myTruck
     */
+    formHandler.displaySlide();
     formHandler.addSubmitHandler(myTruck.createOrder.bind(myTruck));
+
     console.log(formHandler);
+
+
 
 })(window);

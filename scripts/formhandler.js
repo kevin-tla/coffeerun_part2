@@ -50,7 +50,7 @@
 
             //Resets the info put in form
             this.reset();
-            
+
             /*
               Same as autofocus, but after resets, goes back to the first form elements[0]
               elements[] property is an array of the form's field
@@ -59,6 +59,33 @@
         });
     };
 
+//Display the value of the slider as the person click and drags
+    FormHandler.prototype.displaySlide = function() {
+
+        //To display when it loads up
+        document.getElementById('displayme').value = 30;
+
+        var mouse = document.getElementById('strengthLevel');
+        var color;
+        mouse.addEventListener('mousemove', function() {
+            var visual = document.getElementById('displayme');
+
+            if (mouse.value > 77) {
+                //weak
+                color = 'red';
+            } else if (mouse.value < 75) {
+                //regular
+                color = '#FFA500';
+            } else if(mouse.value < 40){
+                //strong
+                color = 'green';
+            }
+
+            visual.value = mouse.value;
+            visual.style.color = color;
+        });
+
+    };
 
     App.FormHandler = FormHandler;
     window.App = App;

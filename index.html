@@ -10,6 +10,7 @@
 </head>
 
 <!--container class acts as a wrapper for all the contents within it and forces it's contents to adapt to it -->
+
 <body class="container">
     <header>
         <h1>CoffeeRun</h1>
@@ -85,11 +86,16 @@
                     </div>
 
 
-                    <div class="form-group">
-                      <label for="strengthLevel">Caffeine Rating</label>
 
-                      <!-- type "range" creates a range slider for people to use-->
-                      <input name="strength" id="strengthLevel" type="range" value="30">
+                    <div class="form-group">
+                        <label for="strengthLevel">Caffeine Rating:</label>
+
+                        <!--Used to display value from slider -->
+                        <input name="displayme" id="displayme" readonly style="border:0; font-weight:bold;">
+
+                        <!-- type "range" creates a range slider for people to use-->
+                        <input name="strength" id="strengthLevel" type="range" value="30">
+
                     </div>
 
                     <!-- btn btn-default class provides the GUI for the buttons through bootstrap
@@ -102,8 +108,7 @@
             </div>
         </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"
-      charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
     <script src="scripts/formhandler.js" charset="utf-8"></script>
     <script src="scripts/datastore.js" charset="utf-8"></script>
     <script src="scripts/truck.js" charset="utf-8"></script>
