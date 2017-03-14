@@ -43,11 +43,12 @@
                 returns data in an array of objects
             */
             var data = {};
-            var golddata = {};
+
             $(this).serializeArray().forEach(function(item) {
                 data[item.name] = item.value;
                 console.log(item.name + ' is ' + item.value);
             });
+
 
 
             //Gold Challenge
@@ -58,8 +59,6 @@
             yesmodal.onclick = function() {
                 modal.style.display = 'none';
                 showDetails();
-
-                console.log('reached');
             };
 
             //Exiting out of the modal
@@ -73,17 +72,23 @@
                 modal.style.display = 'none';
             };
 
-            //@@@@@CHANGE VALUES BACK TO 100 AND coffee-zilla AND !=
-            //    document.getElementById('modalMsg').value = 'sssssssssyo';
-            if (data.strength == 30 && data.size == 'tall' && data.flavor == '') {
+
+            $('input').bind('input propertychange', function() {
+                $('#output').html($(this).val());
+            });
+
+
+
+            if (data.strength == 100 && data.size == 'coffee-zilla' && data.flavor != '' && data.emailAddress != '') {
+
 
 
                 modal.style.display = 'block';
 
-                document.getElementById('modalMsg').value =
-                    'Achievement Unlock! Good job! Does this work? Hell naw. That\'s some strong coffee';
+                //  document.getElementById('modalMsg').value =
+                //      'Achievement Unlock! Good job! Does this work? Hell naw. That\'s some strong coffee';
 
-                document.getElementById('modalMsg') = 'poop \n\n\n\n';
+                //  document.getElementById('modalMsg') = 'poop \n\n\n\n';
 
 
             }
@@ -95,7 +100,7 @@
             fn(data);
 
             //Resets the info put in form
-            this.reset();
+
 
             /*
               Same as autofocus, but after resets, goes back to the first form elements[0]

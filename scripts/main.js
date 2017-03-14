@@ -25,7 +25,7 @@ function showDetails() {
 
     //Initially hide details
     hideDetails();
-  
+
 
     /*
     bind( ) is used to guarantee that you get myTruck
