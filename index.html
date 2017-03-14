@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>coffeerun</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/styles.css">
 
 
 </head>
@@ -72,6 +73,15 @@
                       </label>
                     </div>
 
+                    <!-- Used for Bronze Challenge-->
+                    <div class="radio">
+                        <label>
+                        <input type="radio" name="size" value="coffee-zilla">
+                        Coffee-Zilla
+                      </label>
+                    </div>
+
+
 
                     <div class="form-group">
                         <label for="flavorShot">Flavor Shot</label>
@@ -85,12 +95,24 @@
                         </select>
                     </div>
 
+                    <div class="goldachieve">
+                        <div class="form-group">
+                            <label for="achievement">Achievement!</label>
+                            <select id="gold" class="form-control" name="gold">
+                              <option value="">None</option>
+                              <option value="power">Super Powers</option>
+                              <option value="time">Time Control</option>
+                              <option value="bug">Bug Free Code</option>
+                            </select>
+                        </div>
+                    </div>
+
 
 
                     <div class="form-group">
                         <label for="strengthLevel">Caffeine Rating:</label>
 
-                        <!--Used to display value from slider -->
+                        <!--Used to display value from slider for Silver Challenge -->
                         <input name="displayme" id="displayme" readonly style="border:0; font-weight:bold;">
 
                         <!-- type "range" creates a range slider for people to use-->
@@ -98,9 +120,25 @@
 
                     </div>
 
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <input id="modalMsg" readonly style="border:0; font-weight:bold; padding: auto;">
+
+
+                            <button type="yes" id="yesdisplay" class="btn btn-default">Yes</button>
+                            <button type="no" class="btn btn-default">No</button>
+                        </div>
+
+                    </div>
+
+
                     <!-- btn btn-default class provides the GUI for the buttons through bootstrap
                          go to getbootstrap.com/css for more details on what BootStrap offers-->
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" id="modalBtn" class="btn btn-default">Submit</button>
                     <button type="reset" class="btn btn-default">Reset</button>
 
 
@@ -109,6 +147,7 @@
         </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+
     <script src="scripts/formhandler.js" charset="utf-8"></script>
     <script src="scripts/datastore.js" charset="utf-8"></script>
     <script src="scripts/truck.js" charset="utf-8"></script>

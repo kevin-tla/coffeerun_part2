@@ -26,6 +26,10 @@
     }
 
     FormHandler.prototype.addSubmitHandler = function(fn) {
+
+
+
+
         console.log('Setting submit handler for form');
         /*
         event.preventDefault() makes sure the user is not sent to a different page after sending a form
@@ -39,13 +43,55 @@
                 returns data in an array of objects
             */
             var data = {};
+            var golddata = {};
             $(this).serializeArray().forEach(function(item) {
                 data[item.name] = item.value;
                 console.log(item.name + ' is ' + item.value);
             });
+
+
+            //Gold Challenge
+            var modal = document.getElementById('myModal');
+            var span = document.getElementsByClassName('close')[0];
+            var yesmodal = document.getElementById('yesdisplay');
+
+            yesmodal.onclick = function() {
+                modal.style.display = 'none';
+                showDetails();
+
+                console.log('reached');
+            };
+
+            //Exiting out of the modal
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            };
+
+            span.onclick = function() {
+                modal.style.display = 'none';
+            };
+
+            //@@@@@CHANGE VALUES BACK TO 100 AND coffee-zilla AND !=
+            //    document.getElementById('modalMsg').value = 'sssssssssyo';
+            if (data.strength == 30 && data.size == 'tall' && data.flavor == '') {
+
+
+                modal.style.display = 'block';
+
+                document.getElementById('modalMsg').value =
+                    'Achievement Unlock! Good job! Does this work? Hell naw. That\'s some strong coffee';
+
+                document.getElementById('modalMsg') = 'poop \n\n\n\n';
+
+
+            }
+
+
+
+
             console.log(data);
-
-
             fn(data);
 
             //Resets the info put in form
@@ -59,7 +105,8 @@
         });
     };
 
-//Display the value of the slider as the person click and drags
+
+    //Display the value of the slider as the person click and drags
     FormHandler.prototype.displaySlide = function() {
 
         //To display when it loads up
@@ -70,15 +117,15 @@
         mouse.addEventListener('mousemove', function() {
             var visual = document.getElementById('displayme');
 
-            if (mouse.value > 77) {
+            if (mouse.value < 40) {
                 //weak
-                color = 'red';
+                color = 'green';
             } else if (mouse.value < 75) {
                 //regular
                 color = '#FFA500';
-            } else if(mouse.value < 40){
+            } else {
                 //strong
-                color = 'green';
+                color = 'red';
             }
 
             visual.value = mouse.value;
@@ -86,6 +133,10 @@
         });
 
     };
+
+    //  FormHandler.prototype.modal4U = function(strengthValue, sizeCoffee) {
+    // Get the modal
+
 
     App.FormHandler = FormHandler;
     window.App = App;
