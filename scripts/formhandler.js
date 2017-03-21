@@ -100,8 +100,7 @@
             fn(data);
 
             //Resets the info put in form
-
-
+            this.reset();
             /*
               Same as autofocus, but after resets, goes back to the first form elements[0]
               elements[] property is an array of the form's field
